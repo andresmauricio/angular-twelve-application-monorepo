@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'piano';
+
+  sound(numberSound: number): void {
+    console.log(numberSound)
+  }
 }
