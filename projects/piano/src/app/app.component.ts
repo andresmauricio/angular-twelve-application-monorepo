@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+
+  public conteinerKeys: any[];
+
+  constructor() {
+    this.conteinerKeys = new Array(7);    
+  }
+
   sound(numberSound: number): void {
     const audio: HTMLAudioElement = new Audio();
     audio.src = `../assets/sounds/note${numberSound}.wav`;

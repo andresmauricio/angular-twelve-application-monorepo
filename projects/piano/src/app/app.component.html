@@ -1,11 +1,10 @@
 <div class="container">
   <section class="piano">
-    <div (click)="sound(1)" class="key black"></div>
-    <div (click)="sound(2)" class="key white"></div>
-    <div (click)="sound(3)" class="key black"></div>
-    <div (click)="sound(4)" class="key white"></div>
-    <div (click)="sound(5)" class="key black"></div>
-    <div (click)="sound(6)" class="key white"></div>
-    <div (click)="sound(7)" class="key black"></div>
+    <div
+      *ngFor="let key of conteinerKeys; index as i"
+      (click)="sound(i + 1)"
+      class="key"
+      [ngClass]="{ 'black': (i + 1) % 2 !== 0, 'white': (i + 1) % 2 === 0 }"
+    ></div>
   </section>
 </div>
