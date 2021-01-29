@@ -10,19 +10,24 @@ html {
   box-sizing: inherit;
 }
 
+@mixin display-config($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 .container {
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include display-config(column, center, center);
   background-color: #e3e3e3;
 }
 
 .piano {
   width: 50%;
   height: 50%;
-  display: flex;
+  @include display-config(row, center, center);
   .key {
     height: 100%;
     width: 15%;
