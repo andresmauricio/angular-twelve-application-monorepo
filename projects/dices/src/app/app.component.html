@@ -2,6 +2,7 @@
   <section class="jumboton">
     <h1>Tirar los dados para ganar</h1>
     <button (click)="pushDices()">Lanzar</button>
+    <h2 *ngIf="numberDiceLeft === numberDiceRight">GANASTE</h2>
   </section>
   <section class="container-dices">
     <img [src]="diceLeft">
