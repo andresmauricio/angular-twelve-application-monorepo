@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:piano": "ng serve --project=piano --port 4000"
+    "start:piano": "ng serve --project=piano --port 4000",
+    "start:dices": "ng serve --project=dices --port 4001"
   },
   "private": true,
   "dependencies": {
