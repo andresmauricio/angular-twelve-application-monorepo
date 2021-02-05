@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from './ITodo';
 
 @Component({
   selector: 'app-todo',
@@ -7,14 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   task = '';
-  listTask: any[] = [];
+  listTask: Todo[] = [
+    {
+      id: 1,
+      name: 'Crear una aplicación con Angular',
+      status: false
+    },
+    {
+      id: 2,
+      name: 'Realizar los backups de la BD',
+      status: true
+    },
+  ];
   constructor() {}
 
   ngOnInit(): void {}
 
   saveTask() {
-    this.listTask.push(this.task);
-    console.log(this.listTask);
+    const todo: Todo = {
+      id: new Date().getTime(),
+      name: this.task,
+      status: false,
+    };
+    this.listTask.push(todo);
     this.task = '';
   }
 }
