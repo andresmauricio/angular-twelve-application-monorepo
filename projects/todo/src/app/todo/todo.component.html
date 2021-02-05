@@ -5,9 +5,10 @@
           type="text"
           class="form-control form-control-lg"
           placeholder="Escriba una tarea"
+          [(ngModel)]="task"
         />
         <div class="input-group-append">
-          <button type="button" class="btn btn-success btn-lg">Agregar</button>
+          <button type="button" class="btn btn-success btn-lg" (click)="saveTask()">Agregar</button>
         </div>
       </div>
     </div>
