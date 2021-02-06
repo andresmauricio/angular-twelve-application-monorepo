@@ -25,6 +25,7 @@ export class TodoComponent implements OnInit {
   ngOnInit(): void {}
 
   saveTask() {
+    if (!this.task) return;
     const todo: Todo = {
       id: new Date().getTime(),
       name: this.task,
