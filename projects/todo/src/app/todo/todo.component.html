@@ -18,6 +18,7 @@
         </button>
       </div>
     </div>
+    <h6 class="display-6 text-center my-3" *ngIf="listTask.length === 0">No hay tareas por realizar</h6>
     <ul>
       <li
         *ngFor="let task of listTask; index as i"
