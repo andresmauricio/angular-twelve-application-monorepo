@@ -24,7 +24,8 @@
         class="list-group-item d-flex justify-content-between align-items-center"
       >
         <span>
-          <i class="far fa-circle"></i>
+          <i class="far fa-circle" *ngIf="!task.status"></i>
+          <i class="fas fa-check-circle text-success" *ngIf="task.status"></i>
         </span>
         {{ task.name }}
         <span class="text-danger" (click)="deleteTask(i)">
