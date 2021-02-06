@@ -6,6 +6,7 @@
         class="form-control form-control-lg"
         placeholder="Escriba una tarea"
         [(ngModel)]="task"
+        (keyup.enter)="saveTask()"
       />
       <div class="input-group-append">
         <button
