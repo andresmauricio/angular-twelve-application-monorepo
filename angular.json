@@ -388,7 +388,8 @@
               "projects/coin/src/assets"
             ],
             "styles": [
-              "projects/coin/src/styles.scss"
+              "projects/coin/src/styles.scss",
+              "node_modules/bulma/css/bulma.min.css"
             ],
             "scripts": []
           },
