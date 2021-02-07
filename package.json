@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "start:piano": "ng serve --project=piano --port 4000",
     "start:dices": "ng serve --project=dices --port 4001",
-    "start:todo": "ng serve --project=todo --port 4002"
+    "start:todo": "ng serve --project=todo --port 4002",
+    "start:coin": "ng serve --project=coin --port 4003"
   },
   "private": true,
   "dependencies": {
