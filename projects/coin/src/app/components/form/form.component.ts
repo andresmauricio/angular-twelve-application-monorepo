@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+  public quality: number;
+  public own: string;
+  public want: string;
 
   constructor() { }
 
