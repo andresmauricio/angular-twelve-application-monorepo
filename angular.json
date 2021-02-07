@@ -362,6 +362,126 @@
           }
         }
       }
+    },
+    "coin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/coin",
+      "sourceRoot": "projects/coin/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/coin",
+            "index": "projects/coin/src/index.html",
+            "main": "projects/coin/src/main.ts",
+            "polyfills": "projects/coin/src/polyfills.ts",
+            "tsConfig": "projects/coin/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/coin/src/favicon.ico",
+              "projects/coin/src/assets"
+            ],
+            "styles": [
+              "projects/coin/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/coin/src/environments/environment.ts",
+                  "with": "projects/coin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "coin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "coin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "coin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/coin/src/test.ts",
+            "polyfills": "projects/coin/src/polyfills.ts",
+            "tsConfig": "projects/coin/tsconfig.spec.json",
+            "karmaConfig": "projects/coin/karma.conf.js",
+            "assets": [
+              "projects/coin/src/favicon.ico",
+              "projects/coin/src/assets"
+            ],
+            "styles": [
+              "projects/coin/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/coin/tsconfig.app.json",
+              "projects/coin/tsconfig.spec.json",
+              "projects/coin/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/coin/e2e/protractor.conf.js",
+            "devServerTarget": "coin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "coin:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "piano"
