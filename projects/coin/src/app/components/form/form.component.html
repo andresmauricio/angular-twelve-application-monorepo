@@ -9,20 +9,19 @@
     <div class="field is-expanded">
       <label class="label">Ingrese el cantidad</label>
       <div class="select is-fullwidth">
-        <select>
-          <option>Dolar</option>
-          <option>Euro</option>
+        <select [(ngModel)]="own">
+          <option *ngFor="let money of listConis" [value]="money.name">{{money.description}}</option>
         </select>
       </div>
     </div>
     <div class="field is-expanded">
       <label class="label">Ingrese el cantidad</label>
       <div class="select is-fullwidth">
-        <select>
-          <option>Euro</option>
-          <option>Dolar</option>
+        <select [(ngModel)]="want">
+          <option *ngFor="let money of listConis" [value]="money.name">{{money.description}}</option>
         </select>
       </div>
     </div>
   </div>
 </div>
+<p>{{quality}} {{own}} son {{total}} {{want}}</p>
