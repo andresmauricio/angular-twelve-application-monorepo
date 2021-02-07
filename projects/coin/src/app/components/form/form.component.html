@@ -1,7 +1,13 @@
 <div class="field">
   <label class="label">Ingrese el cantidad</label>
   <div class="control">
-    <input class="input" type="number" placeholder="5.000.000" [(ngModel)]="quality">
+    <input
+      class="input"
+      type="number"
+      placeholder="5.000.000"
+      [(ngModel)]="quality"
+      (input)="convert()"
+    />
   </div>
 </div>
 <div class="field is-horizontal mt-5">
@@ -10,7 +16,9 @@
       <label class="label">Ingrese el cantidad</label>
       <div class="select is-fullwidth">
         <select [(ngModel)]="own" (change)="convert()">
-          <option *ngFor="let money of listConis" [value]="money.name">{{money.description}}</option>
+          <option *ngFor="let money of listConis" [value]="money.name">
+            {{ money.description }}
+          </option>
         </select>
       </div>
     </div>
@@ -18,10 +26,12 @@
       <label class="label">Ingrese el cantidad</label>
       <div class="select is-fullwidth">
         <select [(ngModel)]="want" (change)="convert()">
-          <option *ngFor="let money of listConis" [value]="money.name">{{money.description}}</option>
+          <option *ngFor="let money of listConis" [value]="money.name">
+            {{ money.description }}
+          </option>
         </select>
       </div>
     </div>
   </div>
 </div>
-<p>{{quality}} {{own}} son {{total}} {{want}}</p>
+<p>{{ quality }} {{ own }} son {{ total }} {{ want }}</p>

@@ -24,7 +24,9 @@ export class FormComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.convert();
+  }
 
   convert(): void {
     if (this.own === this.want) {
