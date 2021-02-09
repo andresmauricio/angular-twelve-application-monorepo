@@ -1,1 +1,21 @@
-<p>result works!</p>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+      <div class="card">
+          <h5>Tu Resultado</h5>
+          <div class="row alturaCaja">
+              <div class="col-12">
+                  <div class="fondo-item">
+                      <div class="contenedor">
+                          <p class="resultado">{{ resultado }}</p>
+                          <div class="estiloNumero">{{ bmi }}</div>
+                          <p class="interpretacion">{{ interpretacion }}</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <button class="btn btn-primary btn-lg btn-block btn-color" routerLink="/">RE-CALCULAR</button>
+          </div>
+      </div>
+  </div>
+</div>
