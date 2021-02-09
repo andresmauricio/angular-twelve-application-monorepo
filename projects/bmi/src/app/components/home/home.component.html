@@ -6,7 +6,7 @@
         <div class="col-6">
           <div
             class="fondo-item"
-            [ngClass]="{ sexoDesactivo: sexo === 'Femenino' }"
+            [ngClass]="{ sexoDesactivo: sex === 'Femenino' }"
           >
             <div
               class="contenedor"
@@ -21,7 +21,7 @@
         <div class="col-6">
           <div
             class="fondo-item"
-            [ngClass]="{ sexoDesactivo: sexo === 'Masculino' }"
+            [ngClass]="{ sexoDesactivo: sex === 'Masculino' }"
           >
             <div
               class="contenedor"
@@ -40,11 +40,11 @@
             <div class="contenedor">
               <p>Altura</p>
               <div class="estiloNumero">
-                {{ altura }} <span class="cm">cm</span>
+                {{ height }} <span class="cm">cm</span>
               </div>
               <input
                 type="range"
-                [value]="altura"
+                [value]="height"
                 min="120"
                 max="220"
                 class="custom-range"
@@ -59,10 +59,10 @@
           <div class="fondo-item">
             <div class="contenedor">
               <p>Peso</p>
-              <div class="estiloNumero">{{ peso }}</div>
+              <div class="estiloNumero">{{ weight }}</div>
               <div>
-                <i class="fas fa-minus sumaResta" (click)="peso = peso - 1"></i>
-                <i class="fas fa-plus sumaResta" (click)="peso = peso + 1"></i>
+                <i class="fas fa-minus sumaResta" (click)="weight = weight - 1"></i>
+                <i class="fas fa-plus sumaResta" (click)="weight = weight + 1"></i>
               </div>
             </div>
           </div>
@@ -71,10 +71,10 @@
           <div class="fondo-item">
             <div class="contenedor">
               <p>Edad</p>
-              <div class="estiloNumero">{{ edad }}</div>
+              <div class="estiloNumero">{{ age }}</div>
               <div>
-                <i class="fas fa-minus sumaResta" (click)="edad = edad - 1"></i>
-                <i class="fas fa-plus sumaResta" (click)="edad = edad + 1"></i>
+                <i class="fas fa-minus sumaResta" (click)="age = age - 1"></i>
+                <i class="fas fa-plus sumaResta" (click)="age = age + 1"></i>
               </div>
             </div>
           </div>

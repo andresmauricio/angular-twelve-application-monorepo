@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  edad = 25;
-  peso = 60;
-  altura = 170;
-  sexo = 'Masculino';
+  age = 25;
+  weight = 60;
+  height = 170;
+  sex = 'Masculino';
 
   constructor(private router: Router) { }
 
@@ -18,20 +18,19 @@ export class HomeComponent implements OnInit {
   }
 
   cambiarAltura(event: any): void{
-    console.log(event);
-    this.altura = event.target.value;
+    this.height = event.target.value;
   }
 
   masculino(): void {
-    this.sexo = 'Masculino';
+    this.sex = 'Masculino';
   }
 
   femenino(): void {
-    this.sexo = 'Femenino';
+    this.sex = 'Femenino';
   }
 
   calcular(): void {
-    const BMI = this.peso / Math.pow(this.altura / 100, 2);
+    const BMI = this.weight / Math.pow(this.height / 100, 2);
     this.router.navigate(['result', BMI.toFixed(1)]);
   }
 
