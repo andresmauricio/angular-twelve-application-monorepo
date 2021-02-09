@@ -11,7 +11,7 @@
             <div
               class="contenedor"
               style="cursor: pointer"
-              (click)="masculino()"
+              (click)="changeSex('Masculino')"
             >
               <i class="fas fa-mars sexo"></i>
               <p>Masculino</p>
@@ -26,7 +26,7 @@
             <div
               class="contenedor"
               style="cursor: pointer"
-              (click)="femenino()"
+              (click)="changeSex('Femenino')"
             >
               <i class="fas fa-venus sexo"></i>
               <p>Femenino</p>
@@ -48,7 +48,7 @@
                 min="120"
                 max="220"
                 class="custom-range"
-                (input)="cambiarAltura($event)"
+                (input)="changeHeight($event)"
               />
             </div>
           </div>
@@ -61,8 +61,14 @@
               <p>Peso</p>
               <div class="estiloNumero">{{ weight }}</div>
               <div>
-                <i class="fas fa-minus sumaResta" (click)="weight = weight - 1"></i>
-                <i class="fas fa-plus sumaResta" (click)="weight = weight + 1"></i>
+                <i
+                  class="fas fa-minus sumaResta"
+                  (click)="weight = weight - 1"
+                ></i>
+                <i
+                  class="fas fa-plus sumaResta"
+                  (click)="weight = weight + 1"
+                ></i>
               </div>
             </div>
           </div>
@@ -82,7 +88,7 @@
       </div>
       <div class="row">
         <button
-          (click)="calcular()"
+          (click)="calc()"
           class="btn btn-primary btn-block btn-lg btn-color"
         >
           CALCULAR
