@@ -5,7 +5,7 @@ import { ResultComponent } from './components/result/result.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'result', component: ResultComponent },
+  { path: 'result/:value', component: ResultComponent },
   { path: '**', redirectTo: '' },
 ];
 
