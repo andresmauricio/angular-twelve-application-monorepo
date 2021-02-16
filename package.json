@@ -12,7 +12,8 @@
     "start:dices": "ng serve --project=dices --port 4001",
     "start:todo": "ng serve --project=todo --port 4002",
     "start:coin": "ng serve --project=coin --port 4003",
-    "start:bmi": "ng serve --project=bmi --port 4004"
+    "start:bmi": "ng serve --project=bmi --port 4004",
+    "start:bitly": "ng serve --project=bitly --port 4005 -o"
   },
   "private": true,
   "dependencies": {
