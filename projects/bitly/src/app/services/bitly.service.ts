@@ -11,7 +11,7 @@ export class BitlyService {
   constructor(private http: HttpClient) {}
 
   transformData(url: string) {
-    const header = new HttpHeaders({ Autorization: 'Bearer ' + this.token });
+    const header = new HttpHeaders({ Authorization: 'Bearer ' + this.token });
     const payload = { long_url: url };
     return this.http.post(this.URL_BITLY, payload, { headers: header });
   }
