@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
       this.buttonLabel = constains.buttonReset;
       this.bitlyService
         .transformData(this.urlOrigin)
-        .subscribe((response) => console.log(response));
+        .subscribe((response: any) => this.urlResult = response.link);
     } else {
       this.buttonLabel = constains.buttonShortcut;
       this.urlOrigin = '';
