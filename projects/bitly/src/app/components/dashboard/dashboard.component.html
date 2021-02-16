@@ -5,13 +5,20 @@
         type="text"
         placeholder="https://google.com"
         class="form-control"
+        [(ngModel)]="urlOrigin"
       />
     </div>
     <div class="col-md-4">
-      <button class="btn btn-dark btn-block">Shorcut</button>
+      <button
+        class="btn btn-dark btn-block"
+        [disabled]="!urlOrigin"
+        (click)="transform()"
+      >
+        {{ buttonLabel }}
+      </button>
     </div>
     <div class="col-md-12 mt-5">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" [(ngModel)]="urlResult" />
     </div>
   </div>
 </div>
