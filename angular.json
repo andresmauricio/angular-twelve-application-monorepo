@@ -723,6 +723,126 @@
           }
         }
       }
+    },
+    "wheater-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/wheater-app",
+      "sourceRoot": "projects/wheater-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/wheater-app",
+            "index": "projects/wheater-app/src/index.html",
+            "main": "projects/wheater-app/src/main.ts",
+            "polyfills": "projects/wheater-app/src/polyfills.ts",
+            "tsConfig": "projects/wheater-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/wheater-app/src/favicon.ico",
+              "projects/wheater-app/src/assets"
+            ],
+            "styles": [
+              "projects/wheater-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/wheater-app/src/environments/environment.ts",
+                  "with": "projects/wheater-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "wheater-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "wheater-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wheater-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wheater-app/src/test.ts",
+            "polyfills": "projects/wheater-app/src/polyfills.ts",
+            "tsConfig": "projects/wheater-app/tsconfig.spec.json",
+            "karmaConfig": "projects/wheater-app/karma.conf.js",
+            "assets": [
+              "projects/wheater-app/src/favicon.ico",
+              "projects/wheater-app/src/assets"
+            ],
+            "styles": [
+              "projects/wheater-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wheater-app/tsconfig.app.json",
+              "projects/wheater-app/tsconfig.spec.json",
+              "projects/wheater-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/wheater-app/e2e/protractor.conf.js",
+            "devServerTarget": "wheater-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "wheater-app:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "piano"
