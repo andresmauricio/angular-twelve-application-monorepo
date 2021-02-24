@@ -4,8 +4,18 @@
       <img src="https://govje.azureedge.net/JerseyMet/Icons/B.svg" />
     </div>
     <div class="col-6">
-      <input type="text" placeholder="City" class="form-control" />
-      <button type="button" class="btn btn-warning btn-block mt-3">
+      <input
+        type="text"
+        placeholder="City"
+        class="form-control"
+        [(ngModel)]="city"
+      />
+      <button
+        type="button"
+        class="btn btn-warning btn-block mt-3"
+        [disabled]="!city"
+        (click)="serachCityStatus()"
+      >
         Search
       </button>
       <div class="card bg-dark mt-3" *ngIf="result">
