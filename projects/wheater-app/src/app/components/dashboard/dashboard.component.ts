@@ -9,15 +9,22 @@ import { WheaterMapService } from '../../services/wheater-map.service';
 })
 export class DashboardComponent implements OnInit {
   public result: IWheaterMap;
+  public error = false;
   public city: string;
   constructor(private wheaterMapService: WheaterMapService) {}
 
   ngOnInit(): void {}
 
   serachCityStatus() {
-    this.wheaterMapService.getWheaterInfo(this.city).subscribe((data) => {
-      this.result = data;
-      console.log(data);
-    });
+    this.wheaterMapService.getWheaterInfo(this.city).subscribe(
+      (data) => {
+        this.result = data;
+        this.error = false;
+      },
+      (error) => {
+        this.error = true;
+        this.result = null;
+      }
+    );
   }
 }
