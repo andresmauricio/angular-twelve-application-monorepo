@@ -13,7 +13,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.wheaterMapService.getWheaterInfo('bogota').subscribe((data) => {
-      this.result = data;      
+      this.result = data;   
+      console.log(data);
+         
     });
   }
 }

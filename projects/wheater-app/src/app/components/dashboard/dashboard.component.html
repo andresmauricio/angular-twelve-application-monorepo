@@ -8,6 +8,22 @@
       <button type="button" class="btn btn-warning btn-block mt-3">
         Search
       </button>
+      <div class="card bg-dark mt-3" *ngIf="result">
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">City: {{ result.name }}</li>
+            <li class="list-group-item">País: {{ result.sys.country }}</li>
+            <li class="list-group-item">Longitud: {{ result.coord.lon }}</li>
+            <li class="list-group-item">Latitud: {{ result.coord.lat }}</li>
+            <li class="list-group-item">
+              Humedad: {{ result.main.humidity }} %
+            </li>
+            <li class="list-group-item">
+              Temperatura: {{ result.main.temp }} °K
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
