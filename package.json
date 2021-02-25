@@ -14,7 +14,8 @@
     "start:coin": "ng serve --project=coin --port 4003",
     "start:bmi": "ng serve --project=bmi --port 4004",
     "start:bitly": "ng serve --project=bitly --port 4005 -o",
-    "start:wheater": "ng serve --project=wheater-app --port 4006 -o"
+    "start:wheater": "ng serve --project=wheater-app --port 4006 -o",
+    "start:employee": "ng serve --project=employee --port 4006 -o"
   },
   "private": true,
   "dependencies": {
