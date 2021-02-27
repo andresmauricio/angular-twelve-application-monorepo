@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
-import { EmployeeService } from '../../services/employee.service';
+import { Employee, EmployeeService } from '../../services/employee.service';
 import {
   MatDialog,
   MatDialogRef,
@@ -43,16 +43,16 @@ export class ListEmployeesComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  deleteEmployee(index) {
-    this.openDialog();
+  deleteEmployee(index, employee: Employee) {
+    this.openDialog(employee);
     console.log('borrando', index);
     this.employeeService.deleteOneEmployee(index);
     this.loadEmployees();
   }
-  openDialog(): void {
+  openDialog(employee: Employee): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '520px',
-      data: { name: 'Andrés' },
+      data: { employee: employee },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

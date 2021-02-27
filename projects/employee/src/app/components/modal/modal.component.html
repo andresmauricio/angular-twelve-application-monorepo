@@ -1,13 +1,31 @@
-<h1 mat-dialog-title>Hi {{ data?.name }}</h1>
+<h1 mat-dialog-title>Delete Employee</h1>
 <div mat-dialog-content>
-  <p>Desas borrar el empleado?</p>
+  <p>Are you sure to delete the employee</p>
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>person</mat-icon>
+      <div mat-line>Name: {{ data.employee.name }}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>email</mat-icon>
+      <div mat-line>Email: {{ data.employee.email }}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>support</mat-icon>
+      <div mat-line>Postion: {{ data.employee.position }}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>query_stats</mat-icon>
+      <div mat-line>Status: {{ data.employee.status }}</div>
+    </mat-list-item>
+  </mat-list>
 </div>
 <div mat-dialog-actions>
-  <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
   <button
     mat-raised-button
     color="primary"
-    [mat-dialog-close]="data.name"
+    [mat-dialog-close]="data.employee.name"
     cdkFocusInitial
   >
     Continue
