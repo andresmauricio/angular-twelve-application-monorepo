@@ -43,21 +43,17 @@ export class ListEmployeesComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  deleteEmployee(index, employee: Employee) {
-    this.openDialog(employee);
-    console.log('borrando', index);
+  deleteEmployee(index) {
     this.employeeService.deleteOneEmployee(index);
     this.loadEmployees();
   }
-  openDialog(employee: Employee): void {
+  openDialog(employee: Employee, index): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '520px',
       data: { employee: employee },
     });
-
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      // this.animal = result;
+      if (result) this.deleteEmployee(index);
     });
   }
 
