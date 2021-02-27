@@ -1,8 +1,11 @@
 .container {
   width: 100%;
   margin-top: 60px;
-  table {
+  table, mat-paginator {
     width: 70%;
     margin: 0 auto;
+  }
+  mat-icon {
+    cursor: pointer;
   }
 }
