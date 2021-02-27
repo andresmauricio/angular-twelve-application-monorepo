@@ -9,7 +9,7 @@ import { EmployeeService } from '../../services/employee.service';
   styleUrls: ['./list-employees.component.scss'],
 })
 export class ListEmployeesComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'position', 'phone', 'status'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'position', 'phone', 'status', 'options'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
