@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListEmployeesComponent
+    ListEmployeesComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
