@@ -16,7 +16,7 @@ const EMPLOYEES: Employee[] = [
     email: 'crandle0@state.gov',
     position: 'Books',
     phone: '512-738-3635',
-    status: false,
+    status: true,
   },
   {
     id: 'dd1cb0f3-dcc6-44e5-841f-234a16e9bb24',
@@ -40,7 +40,7 @@ const EMPLOYEES: Employee[] = [
     email: 'wconant3@pagesperso-orange.fr',
     position: 'Garden',
     phone: '469-893-4644',
-    status: false,
+    status: true,
   },
   {
     id: '8f011e39-4250-4f21-9603-77ddb467364a',

@@ -16,7 +16,7 @@
     </mat-list-item>
     <mat-list-item>
       <mat-icon mat-list-icon>query_stats</mat-icon>
-      <div mat-line>Status: {{ data.employee.status }}</div>
+      <div mat-line>Status: {{ data.employee.status ? 'Active' : 'In-Active' }}</div>
     </mat-list-item>
   </mat-list>
 </div>
