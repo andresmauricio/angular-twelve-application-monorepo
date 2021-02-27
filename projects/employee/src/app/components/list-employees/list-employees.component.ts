@@ -3,6 +3,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { EmployeeService } from '../../services/employee.service';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 @Component({
   selector: 'app-list-employees',
   templateUrl: './list-employees.component.html',
@@ -23,7 +29,10 @@ export class ListEmployeesComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private employeeService: EmployeeService) {
+  constructor(
+    private employeeService: EmployeeService,
+    public dialog: MatDialog
+  ) {
     this.loadEmployees();
   }
 
@@ -35,9 +44,21 @@ export class ListEmployeesComponent implements OnInit, AfterViewInit {
   }
 
   deleteEmployee(index) {
+    this.openDialog();
     console.log('borrando', index);
     this.employeeService.deleteOneEmployee(index);
     this.loadEmployees();
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '250px',
+      data: { name: 'Andrés' },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
   }
 
   loadEmployees() {
