@@ -51,7 +51,7 @@ export class ListEmployeesComponent implements OnInit, AfterViewInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
-      width: '250px',
+      width: '520px',
       data: { name: 'Andrés' },
     });
 
