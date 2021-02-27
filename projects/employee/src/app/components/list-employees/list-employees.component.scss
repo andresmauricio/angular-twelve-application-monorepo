@@ -1,11 +1,15 @@
 .container {
   width: 100%;
   margin-top: 60px;
-  table, mat-paginator {
+  table, mat-paginator, .container-filter {
     width: 70%;
     margin: 0 auto;
   }
   mat-icon {
     cursor: pointer;
+  }
+  .mat-form-field {
+    font-size: 16px;
+    width: 100%;
   }
 }

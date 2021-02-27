@@ -1,4 +1,11 @@
 <div class="container">
+<div class="container-filter">
+  <mat-form-field appearance="outline">
+    <mat-label>Search Employee</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input autocomplete="off">
+  </mat-form-field>
+</div>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <!-- ID Column -->
     <ng-container matColumnDef="id">
