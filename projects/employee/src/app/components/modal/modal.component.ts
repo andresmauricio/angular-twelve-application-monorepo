@@ -12,7 +12,10 @@ export class ModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.data);
+    
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
