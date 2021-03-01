@@ -8,13 +8,15 @@ import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { CreateEditEmployeeComponent } from './components/create-edit-employee/create-edit-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListEmployeesComponent,
-    ModalComponent
+    ModalComponent,
+    CreateEditEmployeeComponent
   ],
   imports: [
     BrowserModule,
