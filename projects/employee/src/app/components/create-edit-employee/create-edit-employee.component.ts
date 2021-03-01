@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Employee } from '../../services/employee.service';
+import { Employee, EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-create-edit-employee',
@@ -10,7 +10,10 @@ import { Employee } from '../../services/employee.service';
 export class CreateEditEmployeeComponent implements OnInit {
   employee: Employee;
   form: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private employeeService: EmployeeService
+  ) {
     this.createForm();
   }
 
@@ -25,7 +28,7 @@ export class CreateEditEmployeeComponent implements OnInit {
       position: this.form.get('position').value,
       status: true,
     };
-    console.log(this.employee);
+    this.employeeService.createEmployee(this.employee);
   }
 
   createForm() {
