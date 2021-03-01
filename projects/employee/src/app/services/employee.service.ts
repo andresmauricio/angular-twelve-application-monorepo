@@ -189,4 +189,9 @@ export class EmployeeService {
   createEmployee(employee: Employee) {
     EMPLOYEES.unshift(employee);
   }
+
+  getEmployee(id) {
+    const result = EMPLOYEES.find(employee => employee.id === id);
+    return result;
+  }
 }

@@ -4,7 +4,7 @@ import { CreateEditEmployeeComponent } from './components/create-edit-employee/c
 
 const routes: Routes = [
   { path: 'create', component: CreateEditEmployeeComponent },
-  { path: 'edit:/id', component: CreateEditEmployeeComponent },
+  { path: 'edit/:id', component: CreateEditEmployeeComponent },
 ];
 
 @NgModule({
