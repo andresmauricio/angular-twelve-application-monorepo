@@ -1,21 +1,32 @@
-<form [formGroup]="form" (ngSubmit)="send()">
+<form [formGroup]="form" (ngSubmit)="send()" autocomplete="off">
   <mat-form-field appearance="standard">
     <mat-label>Names</mat-label>
-    <input matInput placeholder="Jhon Doe" formControlName="name">
+    <input matInput placeholder="Jhon Doe" formControlName="name" />
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="jhon.doe@example.com" formControlName="email">
+    <input
+      matInput
+      placeholder="jhon.doe@example.com"
+      formControlName="email"
+    />
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Position</mat-label>
     <mat-select formControlName="position">
-      <mat-option value="option1">Option 1</mat-option>
+      <mat-option value="Book">Book</mat-option>
+      <mat-option value="Kids">Kids</mat-option>
+      <mat-option value="Sports">Sports</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Phone</mat-label>
-    <input matInput placeholder="+1 545 623 845" formControlName="phone">
+    <input
+      matInput
+      placeholder="+1 545 623 845"
+      formControlName="phone"
+      type="number"
+    />
   </mat-form-field>
   <button mat-raised-button color="primary">Send</button>
 </form>
