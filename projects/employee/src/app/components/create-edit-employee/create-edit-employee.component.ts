@@ -28,15 +28,25 @@ export class CreateEditEmployeeComponent implements OnInit {
   ngOnInit(): void {}
 
   send() {
+    if (this.employee) {
+      this.employeeInformation();
+      this.employeeService.updateEmployee(this.employee);
+      console.log(this.employeeService.getListOfEmployees());
+    } else {
+      this.employeeInformation();
+      this.employeeService.createEmployee(this.employee);
+    }
+  }
+
+  employeeInformation() {
     this.employee = {
-      id: new Date().getTime(),
+      id: this.employee.id || new Date().getTime(),
       name: this.form.get('name').value,
       email: this.form.get('email').value,
       phone: this.form.get('phone').value,
       position: this.form.get('position').value,
-      status: true,
+      status: this.employee.status || true,
     };
-    this.employeeService.createEmployee(this.employee);
   }
 
   createForm() {

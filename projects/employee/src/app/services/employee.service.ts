@@ -191,7 +191,13 @@ export class EmployeeService {
   }
 
   getEmployee(id) {
-    const result = EMPLOYEES.find(employee => employee.id === id);
+    const result = EMPLOYEES.find((employee) => employee.id === id);
     return result;
+  }
+
+  updateEmployee(employee: Employee) {
+    EMPLOYEES.forEach((e, i) => {
+      if (e.id === employee.id) EMPLOYEES[i] = employee;
+    });
   }
 }
