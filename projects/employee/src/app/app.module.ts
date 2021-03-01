@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CreateEditEmployeeComponent } from './components/create-edit-employee/create-edit-employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,15 +17,16 @@ import { CreateEditEmployeeComponent } from './components/create-edit-employee/c
     NavbarComponent,
     ListEmployeesComponent,
     ModalComponent,
-    CreateEditEmployeeComponent
+    CreateEditEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
