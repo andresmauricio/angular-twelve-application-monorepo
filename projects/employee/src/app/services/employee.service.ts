@@ -185,4 +185,8 @@ export class EmployeeService {
   deleteOneEmployee(i) {
     EMPLOYEES.splice(i, 1);
   }
+
+  createEmployee(employee: Employee) {
+    EMPLOYEES.unshift(employee);
+  }
 }
