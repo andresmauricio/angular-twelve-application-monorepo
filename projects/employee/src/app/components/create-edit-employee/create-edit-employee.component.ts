@@ -51,10 +51,10 @@ export class CreateEditEmployeeComponent implements OnInit {
 
   createForm() {
     this.form = this.fb.group({
-      name: [this.employee.name, Validators.required],
-      email: [this.employee.email, [Validators.required, Validators.email]],
-      position: [this.employee.position, Validators.required],
-      phone: [this.employee.phone, Validators.required],
+      name: [this.employee?.name, Validators.required],
+      email: [this.employee?.email, [Validators.required, Validators.email]],
+      position: [this.employee?.position, Validators.required],
+      phone: [this.employee?.phone, Validators.required],
     });
   }
 }
