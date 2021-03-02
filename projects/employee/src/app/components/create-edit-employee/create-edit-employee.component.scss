@@ -1,0 +1,9 @@
+.card {
+  max-width: 600px;
+  margin: 5rem auto;
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+  }
+}
